@@ -1,0 +1,1 @@
+BINDIR=%{buildroot}%{_bindir} MANDIR=%{buildroot}%{_mandir} LIBDIR=%{buildroot}%{_libdir} INCLUDEDIR==%{buildroot}%{_includedir}

@@ -1,0 +1,9 @@
+Configure miss: linux/sbpcd.h usability
+Configure miss: linux/sbpcd.h presence
+Configure miss: linux/sbpcd.h
+Configure miss: linux/ucdrom.h usability
+Configure miss: linux/ucdrom.h presence
+Configure miss: linux/ucdrom.h
+Configure miss: main.c:591:17: warning: format not a string literal and no format arguments [-Wformat-security]
+
+Configure miss: main.c:594:20: warning: format not a string literal and no format arguments [-Wformat-security]
