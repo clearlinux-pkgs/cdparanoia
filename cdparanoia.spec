@@ -4,7 +4,7 @@
 #
 Name     : cdparanoia
 Version  : 10.2
-Release  : 1
+Release  : 2
 URL      : http://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz
 Source0  : http://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz
 Summary  : A Compact Disc Digital Audio (CDDA) extraction tool (or ripper).
@@ -76,7 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1563983815
+export SOURCE_DATE_EPOCH=1565112926
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -96,7 +96,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1563983815
+export SOURCE_DATE_EPOCH=1565112926
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cdparanoia
 cp COPYING-GPL %{buildroot}/usr/share/package-licenses/cdparanoia/COPYING-GPL
