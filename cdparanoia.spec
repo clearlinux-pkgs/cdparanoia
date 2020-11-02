@@ -4,7 +4,7 @@
 #
 Name     : cdparanoia
 Version  : 10.2
-Release  : 2
+Release  : 3
 URL      : http://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz
 Source0  : http://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz
 Summary  : A Compact Disc Digital Audio (CDDA) extraction tool (or ripper).
@@ -70,20 +70,21 @@ man components for the cdparanoia package.
 
 %prep
 %setup -q -n cdparanoia-III-10.2
+cd %{_builddir}/cdparanoia-III-10.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1565112926
+export SOURCE_DATE_EPOCH=1604358378
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static ac_objext=o
 make
@@ -96,12 +97,12 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make TEST_VERBOSE=1 test || :
 
 %install
-export SOURCE_DATE_EPOCH=1565112926
+export SOURCE_DATE_EPOCH=1604358378
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/cdparanoia
-cp COPYING-GPL %{buildroot}/usr/share/package-licenses/cdparanoia/COPYING-GPL
-cp COPYING-LGPL %{buildroot}/usr/share/package-licenses/cdparanoia/COPYING-LGPL
-cp debian/copyright %{buildroot}/usr/share/package-licenses/cdparanoia/debian_copyright
+cp %{_builddir}/cdparanoia-III-10.2/COPYING-GPL %{buildroot}/usr/share/package-licenses/cdparanoia/d618a967ab9b5f367ca76f4b9eb6905683b127a8
+cp %{_builddir}/cdparanoia-III-10.2/COPYING-LGPL %{buildroot}/usr/share/package-licenses/cdparanoia/33b814cab876953a2f0bd81ecc8109b8ab5f6247
+cp %{_builddir}/cdparanoia-III-10.2/debian/copyright %{buildroot}/usr/share/package-licenses/cdparanoia/0e8c7fa6aff5b97a85afbd319c9eed33d987ccea
 %make_install BINDIR=%{buildroot}%{_bindir} MANDIR=%{buildroot}%{_mandir} LIBDIR=%{buildroot}%{_libdir} INCLUDEDIR==%{buildroot}%{_includedir}
 
 %files
@@ -125,9 +126,9 @@ cp debian/copyright %{buildroot}/usr/share/package-licenses/cdparanoia/debian_co
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/cdparanoia/COPYING-GPL
-/usr/share/package-licenses/cdparanoia/COPYING-LGPL
-/usr/share/package-licenses/cdparanoia/debian_copyright
+/usr/share/package-licenses/cdparanoia/0e8c7fa6aff5b97a85afbd319c9eed33d987ccea
+/usr/share/package-licenses/cdparanoia/33b814cab876953a2f0bd81ecc8109b8ab5f6247
+/usr/share/package-licenses/cdparanoia/d618a967ab9b5f367ca76f4b9eb6905683b127a8
 
 %files man
 %defattr(0644,root,root,0755)
